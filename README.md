@@ -1,5 +1,5 @@
 # 8085-Emulator
-Emulator for 8085 which supports 24 most commonly used commands which are - 
+Emulator for 8085 which supports 25 most commonly used commands which are - 
 
 Load and Store -
 MOV , MVI , LXI , LDA , STA , LHLD , SHLD , STAX , XCHG
