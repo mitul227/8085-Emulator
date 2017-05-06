@@ -1,3 +1,2 @@
-MVI A,00
-DCR A
-INR A
+G1:MOV A,M
+G1:INX H

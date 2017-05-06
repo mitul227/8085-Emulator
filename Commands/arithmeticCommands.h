@@ -191,6 +191,23 @@ bool doArt(string cmd,string op1,string op2,map<int, pair<int,int> > &memory,map
         result = false;
     }
 
+    else if(cmd == "SUI"){
+        int d = convertToDecimal(op1);
+        if(validData(d) && op2 == ""){
+            int res = registers["A"] - d;
+            if(res < 0)
+            flagRegisters[sign] = 1;
+            int temp = registers["A"];
+            res = checkCarry(res,flagRegisters);
+            registers["A"] = res;
+            checkParity(registers,flagRegisters);
+            checkZero(registers["A"],flagRegisters);
+            checkAuxiliary(temp,d,flagRegisters);
+        }
+        else
+        result = false;
+    }
+
     else if(cmd == "DAD"){
         if(validRegisterPair(op1) && op2 == ""){
             int sum = registers["E"] + registers["L"],c=0;

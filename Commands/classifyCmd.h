@@ -7,7 +7,7 @@ char classify(string cmd){
     return move;
     else if(cmd == "STAX" || cmd == "STA" || cmd == "XCHG" || cmd == "SET")
     return move;
-    else if(cmd == "ADD" || cmd == "SUB" || cmd == "INR" || cmd == "INX" || cmd == "DCR")
+    else if(cmd == "ADD" || cmd == "SUB" || cmd == "INR" || cmd == "INX" || cmd == "DCR" || cmd == "SUI")
     return arithmetic;
     else if(cmd == "DCX" || cmd == "ADI" || cmd == "DAD")
     return arithmetic;

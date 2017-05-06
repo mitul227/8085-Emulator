@@ -8,7 +8,7 @@ int getSize(string cmd){
     return 1;
     else if(cmd == "CMP")
     return 1;
-    else if(cmd == "MVI" || cmd == "ADI")
+    else if(cmd == "MVI" || cmd == "ADI" || cmd == "SUI")
     return 2;
     else if(cmd == "LXI" || cmd == "LDA" || cmd == "LHLD" || cmd == "SHLD" || cmd == "STA")
     return 3;

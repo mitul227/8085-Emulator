@@ -5,13 +5,12 @@
 #include "../convert.h"
 #include "../setFlags.h"
 using namespace std;
-bool doMove(string cmd,string op1,string op2, map<int, pair<int,int> > &memory, map<string,int> &registers,int flagRegisters[]){
+bool doMove(string cmd,string op1,string op2, map<int, pair<int,int> > &memory, map<string,int> &registers,int flagRegisters[],vector< inst > instruction){
     bool result=true;
 
     if(cmd == "SET"){
         int mem = convertToDecimal(op1);
         int data = convertToDecimal(op2);
-        //cout<<mem<<" "<<data<<endl;
         if(validMemory(mem) && validData(data)){
             memory[mem] = make_pair(data,-1);
         }
@@ -26,6 +25,13 @@ bool doMove(string cmd,string op1,string op2, map<int, pair<int,int> > &memory, 
         else if(op1 == "M" && validRegister(op2)){
             int mem = getMemoryFromRegPair("H","L",registers);
             memory[mem] = make_pair(registers[op2],-1);
+            /*if( validEmptyMemory(mem,memory,instruction) ){
+                memory[mem] = make_pair(registers[op2],-1);
+            }
+            else{
+                cout<<"Your program tries to insert value in an occupied Memory Slot";
+                return false;
+            }*/
         }
         else if(validRegister(op1) && op2 == "M"){
             int mem = getMemoryFromRegPair("H","L",registers);

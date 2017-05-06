@@ -13,27 +13,40 @@ void setRegisters(map<string,int> &registers){
     registers["H"] = 0;
     registers["L"] = 0;
 }
-void init(map<int, pair<int,int> > &memory ,vector< pair<string, pair<string,string> > > &instruction, map<string,int> &registers){
+void init(map<int, pair<int,int> > &memory ,vector< inst > &instruction, map<string,int> &registers,map<string,int> &labels,bool &set){
     ifstream ip;
-    string line,command,operands,op1,op2;
+    string line,label,command,operands,op1,op2;
     int memLoc,pos,index=0;
     setRegisters(registers);
     ip.open("ip.txt");
     while(1){
         cout<<"Enter Memory Location to start with : "<<endl;
         cin>>hex>>memLoc;
-        //cout<<memLoc<<endl;
         if( !validMemory(memLoc) ){
             cout<<"\n -- Please Enter a Valid Memory Location -- \n\n";
         }
         else
         break;
     }
-    //memLoc = 2000;
-    //cout<<hex<<memLoc<<endl;
     while( !ip.eof() ){
         getline(ip,line);
         if(line != ""){
+            pos = line.find(':');
+            if(pos == -1){
+                label = "";
+            }
+            else{
+                label = line.substr(0,pos);
+                if(labels.find(label) == labels.end()){
+                    labels[label] = memLoc;
+                }
+                else{
+                    cout<<"\nLabel already Defined Before\n";
+                    set = false;
+                    return;
+                }
+                line = line.substr(pos+1);
+            }
             pos = line.find(' ');
             if(pos == -1){
                 command = line;
@@ -53,12 +66,16 @@ void init(map<int, pair<int,int> > &memory ,vector< pair<string, pair<string,str
                     op2 = operands.substr(pos+1);
                 }
             }
-            instruction.push_back(make_pair(command,make_pair(op1,op2)));
+            instruction.push_back(make_pair(make_pair(label,command),make_pair(op1,op2)));
             memory[memLoc] = make_pair(0,index);
             index++;
+            int size = getSize(command);
+            if(size == 0){
+                set = false;
+                return;
+            }
             memLoc += getSize(command);
         }
-        //cout<<line<<" h"<<endl;
     }
 }
 #endif

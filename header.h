@@ -5,6 +5,7 @@
 #include <fstream>
 #include <map>
 #include <vector>
+#define inst pair< pair<string,string> , pair<string,string> >
 #define move 'm'
 #define arithmetic 'a'
 #define logical 'l'

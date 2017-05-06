@@ -27,4 +27,14 @@ bool validMemory(int m){
     else
     return false;
 }
+/*bool validEmptyMemory(int m){
+    for(j=0;j<=2 && mem-j>=0;j++){
+        if(memory.find(mem-j) != memory.end()){
+            int index = memory[mem-j].second;
+            if(index != -1 && getSize(instruction[index].first) > j)
+            return false;
+        }
+    }
+    return true;
+}*/
 #endif
