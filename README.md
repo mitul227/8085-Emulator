@@ -1,4 +1,4 @@
-# 8085-Emulator
+# 8085-Simulator
 Simulator for 8085 which supports 25 most commonly used commands which are - 
 
 Load and Store -
