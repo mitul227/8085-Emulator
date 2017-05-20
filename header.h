@@ -1,4 +1,5 @@
 #ifndef HEADER_H
+
 #define HEADER_H
 #include <iostream>
 #include <sstream>
@@ -15,4 +16,5 @@
 #define aux 2
 #define parity 3
 #define carry 4
+
 #endif
