@@ -8,6 +8,7 @@
 #include "Commands/branchingCommands.h"
 #include "setFlags.h"
 
+
 using namespace std;
 bool process(map<int, pair<int,int> > &memory , vector< inst > &instruction, map<string,int> &registers,int flagRegisters[],map<string,int> labels){
     map<int, pair<int,int> >::iterator it;
