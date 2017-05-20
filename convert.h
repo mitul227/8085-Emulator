@@ -1,6 +1,7 @@
 #ifndef CONVERT_H
 #define CONVERT_H
 #include "header.h"
+
 using namespace std;
 int convertToDecimal(string op){
     int i,d,num=0,b=1;
