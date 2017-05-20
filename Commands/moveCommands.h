@@ -5,6 +5,7 @@
 #include "../convert.h"
 #include "../setFlags.h"
 using namespace std;
+
 bool doMove(string cmd,string op1,string op2, map<int, pair<int,int> > &memory, map<string,int> &registers,int flagRegisters[],vector< inst > instruction){
     bool result=true;
 
