@@ -1,6 +1,7 @@
 #ifndef SIZES_H
 #define SIZES_H
 using namespace std;
+
 int getSize(string cmd){
     if(cmd == "MOV" || cmd == "ADD" || cmd == "SUB" || cmd == "XCHG" || cmd == "STAX" || cmd == "INR")
     return 1;
