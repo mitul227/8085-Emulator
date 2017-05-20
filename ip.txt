@@ -1,3 +1,2 @@
-G1:MOV A,M
-G1:INX H
-aa
+LXI H,2500
+INX H
