@@ -4,6 +4,7 @@
 #include "../validate.h"
 #include "../setFlags.h"
 using namespace std;
+
 bool doLogical(string cmd,string op1,string op2,map<int, pair<int,int> > &memory,map<string,int> &registers,int flagRegisters[]){
     bool result = true;
     if(cmd == "CMA"){
