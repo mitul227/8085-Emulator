@@ -3,6 +3,7 @@
 #include "header.h"
 #include "Commands/sizes.h"
 #include "validate.h"
+
 using namespace std;
 void setRegisters(map<string,int> &registers){
     registers["A"] = 0;
