@@ -4,6 +4,7 @@
 #include "../validate.h"
 #include "../setFlags.h"
 #include "../convert.h"
+
 using namespace std;
 bool doArt(string cmd,string op1,string op2,map<int, pair<int,int> > &memory,map<string,int> &registers,int flagRegisters[]){
     bool result=true;
