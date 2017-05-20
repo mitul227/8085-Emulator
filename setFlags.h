@@ -5,9 +5,7 @@
 #include "convert.h"
 using namespace std;
 
-void checkSign(int d1){
 
-}
 void checkAuxiliary(int d1,int d2,int flagResgisters[]){
     int res = getLowerNibble(d1) + getLowerNibble(d2);
     if(res >= 16){
