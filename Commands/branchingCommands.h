@@ -3,6 +3,7 @@
 #include "../header.h"
 using namespace std;
 
+
 bool doBranch(string cmd,string op1,string op2, map<int, pair<int,int> > &memory, map<string,int> &registers,int flagRegisters[],map<int, pair<int,int> > ::iterator &it,map<string,int> labels){
     bool result = true;
 
