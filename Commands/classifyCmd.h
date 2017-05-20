@@ -2,6 +2,7 @@
 #define CLASSIFY_H
 #include "../header.h"
 using namespace std;
+
 char classify(string cmd){
     if(cmd == "MOV" || cmd == "MVI" || cmd == "LXI" || cmd == "LDA" || cmd == "LHLD" || cmd == "SHLD")
     return move;
