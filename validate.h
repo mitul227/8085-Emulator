@@ -3,6 +3,7 @@
 #include "header.h"
 using namespace std;
 
+
 bool validRegister(string r){
     if(r == "A" || r == "B" || r == "C" || r == "D" || r == "E" || r == "H" || r == "L")
     return true;
